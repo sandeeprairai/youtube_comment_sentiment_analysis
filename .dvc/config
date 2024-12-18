@@ -1,4 +1,4 @@
 [core]
     remote = myremote
 ['remote "myremote"']
-    url = C:\Users\sandeepkumar\OneDrive\Desktop\dvc_storage
+    url = s3://youtubes-sentiment-dvc-bucket
