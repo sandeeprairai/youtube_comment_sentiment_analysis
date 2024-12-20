@@ -53,7 +53,7 @@ def preprocess_comment(comment):
 # Load the model and vectorizer from the model registry and local storage
 def load_model_and_vectorizer(model_name, model_version, vectorizer_path):
     # Set MLflow tracking URI to your server
-    mlflow.set_tracking_uri("http://ec2-3-12-198-26.us-east-2.compute.amazonaws.com:5000/")  # Replace with your MLflow tracking URI
+    mlflow.set_tracking_uri("http://ec2-3-143-213-62.us-east-2.compute.amazonaws.com:5000/")  # Replace with your MLflow tracking URI
     client = MlflowClient()
     model_uri = f"models:/{model_name}/{model_version}"
     model = mlflow.pyfunc.load_model(model_uri)
@@ -62,10 +62,6 @@ def load_model_and_vectorizer(model_name, model_version, vectorizer_path):
 
 # Initialize the model and vectorizer
 model, vectorizer = load_model_and_vectorizer("my_model", "1", "./tfidf_vectorizer.pkl")  # Update paths and versions as needed
-
-@app.route('/')
-def home():
-    return "Welcome to our flask api"
 
 @app.route('/predict_with_timestamps', methods=['POST'])
 def predict_with_timestamps():
