@@ -122,14 +122,14 @@ jobs:
       - name: Build Docker image
         if: success()
         run: |
-          docker build -t yt_chrome_plugin .
+          docker build -t yt-chrome-plugin .
 
       - name: Tag Docker image
         if: success()
         run: |
-          docker tag yt_chrome_plugin:latest 867344466514.dkr.ecr.us-east-2.amazonaws.com/yt_chrome_plugin:latest
+          docker tag yt-chrome-plugin:latest 867344466514.dkr.ecr.us-east-2.amazonaws.com/yt-chrome-plugin:latest
 
       - name: Push Docker image to AWS ECR
         if: success()
         run: |
-          docker push 867344466514.dkr.ecr.us-east-2.amazonaws.com/yt_chrome_plugin:latest
+          docker push 867344466514.dkr.ecr.us-east-2.amazonaws.com/yt-chrome-plugin:latest
