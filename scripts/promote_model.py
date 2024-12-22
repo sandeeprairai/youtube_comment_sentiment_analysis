@@ -3,7 +3,7 @@ import mlflow
 
 def promote_model():
     # Set up AWS MLflow tracking URI
-    mlflow.set_tracking_uri("http://ec2-18-218-93-205.us-east-2.compute.amazonaws.com:5000/")
+    mlflow.set_tracking_uri("http://ec2-3-23-97-69.us-east-2.compute.amazonaws.com:5000/")
 
     client = mlflow.MlflowClient()
 
