@@ -63,6 +63,13 @@ def load_model_and_vectorizer(model_name, model_version, vectorizer_path):
 # Initialize the model and vectorizer
 model, vectorizer = load_model_and_vectorizer("yt_chrome_plugin_model", "15", "./tfidf_vectorizer.pkl")  # Update paths and versions as needed
 
+
+@app.route('/')
+def home():
+    return "Welcome to the flask api"
+
+
+
 @app.route('/predict_with_timestamps', methods=['POST'])
 def predict_with_timestamps():
     data = request.json
